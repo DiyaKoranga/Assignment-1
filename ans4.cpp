@@ -3,23 +3,23 @@
 using namespace std;
 int main()
 {
-    char str[10];
-    int i, j,t, l = 0;
-    cout <<"Input string ";
-    cin>>str;
+   char s[50];
+   cin>>s;
+   int l = strlen(s);
+   int c = 0;
+   for(int i=0;i<l/2;i++)
+   {
+       if(s[i]==s[l-i-1])
+       {
+           c++;
+       }
 
-
-	for(l=0;str[l]!='\0';++l);
-
-	for(i=0,j=l-1;i<l/2;++i,--j)
-	{
-		if(str[j]!=str[i])
-			t=0;
-	}
-
-	if(t==1)
-        {cout <<"The string is not a palindrome";}
-    else
-        {cout <<"The string is a palindrome";}
+   }
+   if(c == l/2)
+   {
+       cout<<"String is palindrome";
+   }else{
+       cout<<"String is not a palindrome";
+   }
     return 0;
 }
